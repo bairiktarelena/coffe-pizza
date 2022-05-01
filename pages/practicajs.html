@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>определение переменных </p>
+    <p id="ex1"></p>
+    <p id="ex2"></p>
+    <p id="ex3"></p>
+    <!-- 2 -->
+    <p>определение переменных </p>
+    <p id="ex4"></p>
+    <p id="ex5"></p>
+    <p id="ex6"></p>
+    <!--операции + -->
+    <p>операции +</p>
+    <p id ="ex7"></p>
+    <p id ="ex8"></p>
+    <p id ="ex9"></p>
+    <p id ="ex10"></p>
+
+    <!-- СЛОЖЕНИЕ ЧИСЛО И СИМВОЛЫ-->
+    <P id="rez"> результат здесь</P>
+    <button onclick="summa()">Clik</button>
+    <p id ="ex11"></p>
+    <p id ="ex12"></p>
+    <p id ="ex13"></p>
+    <!--ves-->
+    <h1>Функции javascript</h1>
+    <h3>Формула Broca для подсчета идеального веса</h3>
+    <p id="rez2">ваш вес должен быть</p>
+
+    <p>Зарплата плюс добавки</p>
+
+    <p>сумма</p>
+    <p id="sal"></p>
+
+    
+
+    <script>
+        var nume = "иванов";
+        var prenume = "иван";
+        var varsta= "35";
+        document.getElementById("ex1").innerHTML = nume;
+        document.getElementById("ex2").innerHTML = prenume;
+        document.getElementById("ex3").innerHTML = varsta;
+
+        var nume = "иванов" , prenume = "иван" , varsta = "35";
+        document.getElementById("ex4").innerHTML = nume;
+        document.getElementById("ex5").innerHTML = prenume;
+        document.getElementById("ex6").innerHTML = varsta;
+
+        var adaos = 5;
+        var cost = adaos + 500;
+        document.getElementById("ex7").innerHTML = cost;
+
+        var nume ="иванов"; datePersonale = nume + "  " + "иван"
+        document.getElementById("ex8").innerHTML = datePersonale;
+
+        var cod = "+373", nrTelefon =  cod + 555555555;
+        document.getElementById("ex9").innerHTML = nrTelefon;
+        document.getElementById("ex10").innerHTML = nrTelefon.length;
+
+        function summa() {
+            var rezultat = 300 + " " + "лет"
+            document.getElementById("rez").innerHTML = rezultat;
+
+
+        }
+
+        var perDate = ["Ivanov", "ivan", "1990"];
+        document.getElementById ("ex11").innerHTML = perDate[1];
+        document.getElementById ("ex12").innerHTML = perDate[0];
+        document.getElementById ("ex13").innerHTML = perDate[2];
+
+        function vesideal(visota){
+            return visota -100;
+            
+        }
+        document.getElementById("rez2").innerHTML = document.getElementById("rez2").innerHTML + " "  + vesideal(170) + "kg";
+        
+        var calcul = function fcalcul(salariu,adaos) {
+            return salariu + adaos
+        }
+        var suma = calcul(3000, 700);
+        document.getElementById("sal").innerHTML = suma;
+
+        
+    </script>
+
+
+</body>
+</html>

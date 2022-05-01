@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+      <title>Pizza Pronto</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="../css/style.css" rel="stylesheet" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+      <link rel="icon" type="images/images/png" href="..images/images/favicon.png">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs.com@2/dist/email.min.js"></script>
+    </head>
+
+    <body>
+        <header>
+          <div class="=container-logo col-2">
+            <a href="../index.html">
+
+                <img class="img-header" src="../images/images/logo.png" />
+            </a>
+           </div>
+
+         <div class="col-8">
+            <h1 class="name">Кафе пицца</h1>
+         </div>
+
+        </header>
+            <nav>
+               <a href="menu.html">Меню</a>
+               <a href="pages/contacte.html">Контакты</a>
+            </nav>
+        <div class="container">
+            <aside>
+               <a href="pizza.html"><i class="fas fa-pizza-slice"></i>Пицца</a>
+               <a href="salate.html"><i class="fas fa-seedling"></i>Салаты</a>
+               <a href="pasta.html"><i class="fas fa-utensils"></i>Паста</a>
+               <a href="bauturi.html"><i class="fas fa-wine-glass"></i>Напитки</a>
+            </aside>
+            <main>
+                <h2 class="centered">Контакты</h2>
+                <hr class="linia" />
+                <div class="conteiner-contact">
+                <div class="col-5 forma-contact">
+                <h3 class="centered">оставьте сообщение<i class="fas fa-envelope"></i></h3>
+
+                        <form autocomplete="off" id="formular">
+                            <input type="text" placeholder="Имя" required id="imea" />
+                            <input type="email" placeholder="Email" required id="adress" />
+                            <input type="text" placeholder="Тема" required id="tema" />
+                            <textarea placeholder="Сообщение" rows="7" id="mesaj"> </textarea>
+                            <input type="button" value="Отправить" id="otpraviti" onclick="send()" />
+
+                        </form>
+                    </div>
+                    <div class="col-5 telefon-contact centered">
+                      <h3 class="centered">Телефоны<i class="fas fa-phone"></i> </h3>
+                      <b>Oficiul central:</b>
+                      <a href="tel:+373-022-000-000">022-000-000</a>
+                      <br /><br />
+                      <b>Comenzi:</b>
+                      <a href="tel:+373-78-000-001">78-000-001</a>
+                      <br /><br />
+                      <b>Serviciul client:</b>
+                      <a href="tel:+373-60-416-601">68-001-002</a>
+                    </div>
+                </div>
+
+                <br />
+                <div class="row">
+                <div class="col-5 centered adrese-contact">
+                    <h3 class="centered">Adrese<i class="fas fa-building"></i></h3>
+                    <b>Chisinau:</b> <span>Bd. Stefan Cel Mare 20</span>
+                    <br /><br />
+                    <b>Chisinau:</b> <span>Bd. Moscova 8</span>
+                    <br /><br />
+                    <b>Balti:</b> <span>str. Florilor 32</span>
+                    <br /><br />
+                 </div>
+
+                 <div class="col-5">
+                    <iframe src=""></iframe>
+                </div>
+            </main>
+        </div>
+        <footer>
+            <h1>Кафе пицца - 2022</h1>
+        </footer>
+        <script>
+            emailjs.init("i5HAVDUBD1bpxkXzJ");
+            function send() {
+                if (document.getElementById("formular").checkValidity() == false) {
+                    document.getElementById("formular").reportValidity();
+                    return;
+                }
+            var date = {
+                Имя: document.getElementById("imea").value,
+                Email: document.getElementById("adress").value,
+                Тема: document.getElementById("tema").value,
+                Сообщение: document.getElementById("mesaj").value
+            };
+            emailjs.send("service_g8749vo", "template_axclx8b", date)
+             .then(function (response) {
+                    alert("сообщение успешно было отправлено")
+                    document.getElementById("formular").reset();
+
+            }, function (error) {
+               alert("ошибка при отправке")
+            })
+            }
+        </script>
+
+
+    </body>
+
+</html>
